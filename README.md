@@ -10,7 +10,7 @@ Getting and Cleaning Data Course Project repo JHBPSH date created 51224
     3. *Submitted for student peer evlauation;* a link to my GitHub repository containing the run_analysis.R file that preforms the required analysis
     4. An independent tidy data set called tidy.txt containing the average of each variable for each activity and each subject
 
-### DELIVERABLES DECSRIPTION:
+### DELIVERABLES DESCRIPTION:
 
 1. Download and open the assignment zip file and save to local dir 
 2. Identify and load the required R packaqes needed to manipulate and analyze the given data files
