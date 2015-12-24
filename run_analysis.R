@@ -1,0 +1,43 @@
+# Getting and Cleaning Data course project code:
+# Install packages:
+install.packages('curl', 'plyr', 'dplyr', 'Formula', 'grid', 'Hmisc', 'lattice', 'Rcpp', 'RCurl', 'rmarkdown', 'RMySQL', 'base', 'codetools', 'ggplot2', 'data.table', 'Formula', 'httr', 'knitr', 'macgrittr', 'markdown', 'reshape2', 'rhdf5', 'rJava', 'RJDBC', 'RPostgreSQL', 'sqldf', 'splines', 'survival', 'utils', 'XLConnect', 'xlxs', 'XML')
+# Load packages:
+library(curl)
+library(plyr)
+library(dplyr)
+library(Formula)
+library(grid)
+library(Hmisc)
+library(Rcpp)
+library(RCurl)
+library(rmarkdown)
+library(RMySQL)
+library(base)
+library(codetools)
+library(ggplot2)
+library(data.table)
+library(Formula)
+library(httr)
+library(knitr)
+library(magrittr)
+library(markdown)
+library(reshape2)
+library(rhdf5)
+library(rJava)
+library(RJDBC)
+library(RPostgreSQL)
+library(splines)
+library(survival)
+library(sqldf)
+library(tidyr)
+library(utils)
+library(XLConnect)
+library(xlsx)
+library(XML)
+# setwd:
+setwd("~/Desktop/Coursera_R/G&CD_CourseProject")
+# Download required files:
+if(!file.exists("./data")){dir.create("./data")}
+fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(fileUrl,destfile="./data/Dataset.zip",method="curl")
+unzip(zipfile="./data/Dataset.zip",exdir="./data")
