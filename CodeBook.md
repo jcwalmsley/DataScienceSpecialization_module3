@@ -16,7 +16,7 @@
     Stage Two:
         An independent tidy data set called tidy.txt containing the average of each variable for each activity and each subject
 
-### OBSERVATIONS/RECORDS: (Record of 30 individuals performing six activities to collect info on 69 variables)
+### OBSERVATIONS/RECORDS: (Record of 30 individuals performing six activities to collect data on 69 variables)
     # INDIVIDUAL SUBJECTS:
         30 volunteers within an age bracket of 19-48 years.
     # ACTIVITIES:
