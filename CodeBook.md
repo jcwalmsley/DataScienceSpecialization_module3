@@ -1,6 +1,6 @@
 # DESCRIPTION:
 
-## This code book describes the variables, the data, and the transformations and work performed to clean up the data. 
+## This code book describes the variables, the data, and the transformations and work performed to clean the data. 
 
 ### RAW VARIABLES:
     A 561-feature vector with time and frequency domain variables.
