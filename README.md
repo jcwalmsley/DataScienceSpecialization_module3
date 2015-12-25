@@ -30,19 +30,19 @@ The purpose of this project is to demonstrate your ability to collect, work with
 ## HOW THE PROJECT WILL BE EVALUATED:
 
 ### DEMONSTRATED DELIVERABLE:
-    **SPECIAL INSTRUCTIONS**
-    **Please upload the tidy data set created in step 5 of the instructions. Please upload your data set as a txt file created with write.table() using row.name=FALSE (do not cut and paste a dataset directly into the text box, as this may cause errors saving your submission).**
+    SPECIAL INSTRUCTIONS
+    Please upload the tidy data set created in step 5 of the instructions. Please upload your data set as a txt file created     with write.table() using row.name=FALSE (do not cut and paste a dataset directly into the text box, as this may cause        errors saving your submission).
 =============================================
 ### EVALUATION CRITERIA 1: 
-    **Has the student submitted a tidy data set?**
-    **Either a wide or a long form of the data is acceptable if it meets the tidy data principles of week       1 (Each variable you measure should be in one column, Each different observation of that variable         should be in a different row)**
+    Has the student submitted a tidy data set?
+    Either a wide or a long form of the data is acceptable if it meets the tidy data principles of week 1 (Each variable you     measure should be in one column, Each different observation of that variable should be in a different row)
       
 ### EVALUATION CRITERIA 2A:
-    **Did the student submit a Github repo with the required scripts?**
+    Did the student submit a Github repo with the required scripts?
 ### EVALUATION CRITERIA 2B:
-    **Was code book submitted to GitHub that modifies and updates the codebooks available to you with the     data to indicate all the variables and summaries you calculated, along with units, and any other          relevant information?**
+    Was code book submitted to GitHub that modifies and updates the codebooks available to you with the data to indicate all     the variables and summaries you calculated, along with units, and any other relevant information?
 ### EVALUATION CRITERIA 2C:
-    **I was able to follow the README in the directory that explained what the analysis files did.**
+    I was able to follow the README in the directory that explained what the analysis files did.
 
 ### EVALUATION CRITERIA 3:
-    **As far as you can determine, does it appear that the work submitted for this project is the work of     the student who submitted it?**
+    As far as you can determine, does it appear that the work submitted for this project is the work of the student who          submitted it?
