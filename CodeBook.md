@@ -11,9 +11,11 @@
 ### PROCESSED VARIABLES:
     Stage One:
         Combine the thee train and test data sets into a singular train and a singular test data sets
-        Merge the combined train and the test data sets into a single complete data set
-        Extract just the mean and standard deviation data for each measurement
     Stage Two:
+        Merge the combined train and the test data sets into a single complete data set
+    Stage Three:
+        Extract just the mean and standard deviation data for each measurement
+    Stage Four:
         An independent tidy data set called tidy.txt containing the average of each variable for each activity and each subject
 
 ### OBSERVATIONS/RECORDS: (Record of 30 individuals performing six activities to collect data on 69 variables):
