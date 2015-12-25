@@ -27,6 +27,8 @@ The purpose of this project is to demonstrate your ability to collect, work with
     c) A README.md file in the repo explaining how the run_analyis.R script works  
 
 =============================================
+## HOW THE PROJECT WILL BE EVALUATED:
+
 ### DEMONSTRATED DELIVERABLE:
     **SPECIAL INSTRUCTIONS**
     **Please upload the tidy data set created in step 5 of the instructions. Please upload your data set as a txt file created with write.table() using row.name=FALSE (do not cut and paste a dataset directly into the text box, as this may cause errors saving your submission).**
