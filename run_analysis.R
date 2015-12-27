@@ -15,11 +15,11 @@ if (!file.exists(UCI HAR Dataset)) {
 	create.dir(UCI HAR Dataset)
 }
 	
-# Assign a handle to the url data location & download the zip file containing the data
+# Assign handle to the data location URL
 
 fileUrl <- “https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip”
 
-# Download the data set using the assigned handle
+# Download the data
 
 download.file(fileUrl, UHI HAR Dataset, method = "curl")
 
