@@ -11,8 +11,6 @@ G) PROCESSING / TRANSFORMATIONS OF THE RAW DATA
 H) INSTRUCTIONS FOR FINAL PRODUCT
 I) SOURCE INFORMATION
 
-,  and records, and the transformations and work performed to clean the data. 
-
 =======================================
 # A) RAW DATA - SUMMARY:
 A 561-feature vector with time and frequency domain variables.
