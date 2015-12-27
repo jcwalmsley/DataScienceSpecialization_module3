@@ -83,8 +83,6 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
     ACTIVITIES:
         Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist.  
 
-For more information about this dataset contact: activityrecognition@smartlab.ws
-
 ======================================
 ## G) PROCESSING / TRANSFORAMTIONS OF THE RAW DATA:
     Create one R script called run_analysis.R that:
@@ -108,6 +106,8 @@ Use of this dataset in publications must be acknowledged by referencing the foll
 [1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013. 
 
 This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited.
+
+For more information about this dataset contact: activityrecognition@smartlab.ws
 
 Other Related Publications:
 ===========================
