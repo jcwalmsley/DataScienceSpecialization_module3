@@ -1,4 +1,4 @@
-##Getting and Cleaning Data Course Project JHUBPSH dt. 51207
+## GETTING AND CLEANING DATA COURSE PROJECT - JHUBPSH dt. 51207
 
 ## CONTENTS: 
 A) RAW DATA SUMMARY 
