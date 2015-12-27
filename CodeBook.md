@@ -1,4 +1,4 @@
-# DESCRIPTION:
+#CODEBOOK.MD for Getting and Cleaning Data Course Project JHUBPSH dt. 51207
 
 ## CONTENTS: 
 A) RAW DATA SUMMARY 
