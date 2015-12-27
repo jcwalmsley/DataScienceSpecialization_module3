@@ -6,13 +6,13 @@ B) RAW DATA DETAILS
 C) RAW DATA MEASUREMENTS 
 D) RAW DATA NOTES ON THE MEAUSREUMENTS
 E) ADDITIONAL NOTES
-F) VARIALBES OVERVIEW OF OBSERVATIONS
+F) VARIABLES OVERVIEW OF OBSERVATIONS 
 G) PROCESSING / TRANSFORMATIONS OF THE RAW DATA
 H) INSTRUCTIONS FOR FINAL PRODUCT
 I) SOURCE INFORMATION
 
 =======================================
-# A) RAW DATA - SUMMARY:
+## A) RAW DATA - SUMMARY:
 A 561-feature vector with time and frequency domain variables.
 Features are normalized and bounded within [-1,1].
 Each feature vector is a row on the text file.
@@ -20,7 +20,7 @@ Each feature vector is a row on the text file.
 'features.txt': List of all features.
 
 ========================================    
-# B) RAW DATA - DETAILS:
+## B) RAW DATA - DETAILS:
 For each record it is provided:
 
 - Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
@@ -76,7 +76,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 - Each feature vector is a row on the text file.
 
 =======================================
-## F) OVERVIEW OF OBSERVATIONS/RECORDS : 
+## F) VARIABLES OVERVIEW OF OBSERVATIONS: 
     (Record of 30 individuals performing six activities to collect data on 69 variables):
     INDIVIDUAL SUBJECTS:
         30 volunteers within an age bracket of 19-48 years.
@@ -95,13 +95,13 @@ For more information about this dataset contact: activityrecognition@smartlab.ws
     5) Uses descriptive activity names to name the activities in the data set
     6) Appropriately labels the data set with descriptive variable names. 
     7) From the data set in step 6, creates a second, independent tidy data set with the average of each variable for each         activity and each subject.
-## H) INSTRUCTIONS FOR FINAL PRODUCT
+## H) INSTRUCTIONS FOR FINAL PRODUCT:
     Create the tidy data set called tidy.txt by;
         Upload the tidy data set created in step 7 of the procuessing instructions above as a txt file created with                 write.table() using row.name=FALSE  
 
 
 ====================================
-## I) SOURCE INFORMATION :
+## I) SOURCE INFORMATION:
 License:
 Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
 
