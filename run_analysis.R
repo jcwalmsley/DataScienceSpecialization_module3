@@ -61,16 +61,6 @@ dim(df2) # 10299r, 68c
 dim(fullmerg) # 10299r, 563c
 
 # REFINE RESULTS
-tidyData <- data_frame
-for (i in 1:30) {
-	subj <- subset(df2, subject==i)
-	for (j in 1:6) {
-		act <- subset(subj, activity==j)
-		intData <- as.vector(apply(act, 2, mean))
-		tidyData <- rbind(tidyData, intData)
-	}
-}
-
 df2 <- aggregate(. ~subject + activity, fullmerg, mean)
 df2 <- df2[order(df2$subject, df2$activity),]
 write.table(df2, file = "tidyData.txt", row.names=FALSE)
