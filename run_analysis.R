@@ -61,6 +61,7 @@ dim(df2) # 10299r, 68c
 dim(fullmerg) # 10299r, 563c
 
 # REFINE RESULTS
+tidyData.txt <- data.frame
 df2 <- aggregate(. ~subject + activity, fullmerg, mean)
 df2 <- df2[order(df2$subject, df2$activity),]
 write.table(df2, file = "tidyData.txt", row.names=FALSE)
