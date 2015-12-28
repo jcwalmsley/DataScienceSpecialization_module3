@@ -63,6 +63,3 @@ dim(fullmerg) # 10299r, 563c
 # REFINE RESULTS
 tidy.txt <- data.frame
 write.table(df2, "tidy.txt", row.names = FALSE, quote = FALSE)
-
-
-write.table(fullmerg.mean, "tidy.txt", row.names = FALSE, quote = FALSE)
