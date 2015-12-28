@@ -44,8 +44,8 @@ submerg <- rbind(subtrain, subtest)
 fullmerg <- cbind(submerg, ymerg, xmerg)
 
 # RENAME COLUMNS
-featureNames <- as.character(features[,2])
-newCols <- c("subject", "activity", featureNames)
+features <- as.character(features[,2])
+newCols <- c("subject", "activity", features)
 colnames(fullmerg) <- newCols
 
 # EXTRACT MEAN & STD
