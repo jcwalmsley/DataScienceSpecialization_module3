@@ -51,10 +51,10 @@ colnames(fullmerg) <- newCols
 # EXTRACT MEAN & STD
 meanCols <- grep("mean()", colnames(fullmerg))
 stdCols <- grep("std()", colnames(fullmerg))
-finalCols <- c(meancols, stdcols)
-finalCols <- sort(finalCols)
-finalCols
-df1 <- fullmerg[, c(1, 2, finalCols)]
+finCols <- c(meanCols, stdCols)
+finCols <- sort(finCols)
+finCols
+df1 <- fullmerg[, c(1, 2, finCols)]
 df1
 df2 <- df1 %>% select(-contains("meanFreq")) 
 dim(df2) # 10299r, 68c
