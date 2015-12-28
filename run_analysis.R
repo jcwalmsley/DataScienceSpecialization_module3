@@ -61,10 +61,8 @@ dim(df2) # 10299r, 68c
 dim(fullmerg) # 10299r, 563c
 
 # REFINE RESULTS
-fullmerg$activity <- factor(fullmerg$activity, levels = activityLables[,1], lables = activityLables[,2])
-fullmerg$subject <- as.factor(fullmerg$subject)
+tidy.txt <- data.frame
+write.table(df2, "tidy.txt", row.names = FALSE, quote = FALSE)
 
-fullmerg.melted <- melt(fullmerg, id = c("subject", "activity"))
-fullmerg.mean <- dcast(fullmerg.melted, subject + activity ~ variable, mean)
 
 write.table(fullmerg.mean, "tidy.txt", row.names = FALSE, quote = FALSE)
