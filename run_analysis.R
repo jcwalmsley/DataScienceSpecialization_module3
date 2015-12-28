@@ -67,4 +67,4 @@ fullmerg$subject <- as.factor(fullmerg$subject)
 fullmerg.melted <- melt(fullmerg, id = c("subject", "activity"))
 fullmerg.mean <- dcast(fullmerg.melted, subject + activity ~ variable, mean)
 
-write.table(fullmerg.mean, "tidy.txt", row.names = FALSE. quote = FALSE)
+write.table(fullmerg.mean, "tidy.txt", row.names = FALSE, quote = FALSE)
