@@ -79,26 +79,23 @@ The units given are g’s for the accelerometer and rad/sec for the gyro and g/s
 - Each feature vector is a row on the text file.
 
 =======================================
-## C) VARIABLES OVERVIEW OF OBSERVATIONS: 
-    (Record of 30 individuals performing six activities to collect data on 69 variables):
-    INDIVIDUAL SUBJECTS:
-        30 volunteers within an age bracket of 19-48 years.
-    ACTIVITIES:
-        Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist.  
+## C) VARIABLES OVERVIEW OF OBSERVATIONS: Record of 30 individuals performing six activities to collect data on 69 variables
+INDIVIDUAL SUBJECTS: 30 volunteers within an age bracket of 19-48 years.
+ACTIVITIES: Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist.  
 
 ======================================
 ## D) PROCESSING / TRANSFORAMTIONS OF THE RAW DATA:
-    Create one R script called run_analysis.R that:
-    1) Download and unzip the files for the assignment into the local directory
-    2) Read the files
-    3) Merges the training and the test data sets to create one data set adding a header of variables (activity names)
-    4) Extracts only the measurements on the mean and standard deviation for each measurement. 
-    5) Appropriately labels the data set with descriptive variable names. 
-    6) From the data set in step 5, creates a second, independent tidy data set with the average of each variable for each         activity and each subject.
+Create one R script called run_analysis.R that:
+1) Download and unzip the files for the assignment into the local directory
+2) Read the files
+3) Merges the training and the test data sets to create one data set adding a header of variables (activity names)
+4) Extracts only the measurements on the mean and standard deviation for each measurement.
+5) Appropriately labels the data set with renamed descriptive acivity names. 
+6) Appropriately labels the data set with renamed descriptive variable names. 
+7) From the data set in step 6, creates a second, independent tidy data set with the average of each variable for each         activity and each subject.
 ## E) INSTRUCTIONS FOR FINAL PRODUCT:
-    Create the tidy data set called tidy.txt by;
-        Upload the tidy data set created in step 6 of the procuessing instructions above as a txt file created with                 write.table() using row.name=FALSE  
-
+Create the tidy data set called tidy.txt by;
+Upload the tidy data set created in step 7 of the procuessing instructions above as a txt file created with                 write.table() using row.name=FALSE  
 
 ====================================
 ## F) SOURCE INFORMATION:
