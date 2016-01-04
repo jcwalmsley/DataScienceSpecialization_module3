@@ -100,7 +100,7 @@ The set of variables that were estimated from these signals are:
 - Each feature vector is a row on the text file.
 
 =======================================
-## C) VARIABLES OVERVIEW OF OBSERVATIONS: Record of 30 individuals performing six activities to collect data on 69 variables
+## C) VARIABLES OVERVIEW OF OBSERVATIONS: Record of 30 individuals performing six activities to collect data on 89 variables
 INDIVIDUAL SUBJECTS: 30 volunteers within an age bracket of 19-48 years.
 ACTIVITIES: Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist.  
 
