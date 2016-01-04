@@ -111,12 +111,11 @@ Create one R script called run_analysis.R that:
 2) Read the files
 3) Merges the training and the test data sets to create one data set adding a header of variables (activity names)
 4) Extracts only the measurements on the mean and standard deviation for each measurement.
-5) Appropriately labels the data set with renamed descriptive acivity names. 
-6) Appropriately labels the data set with renamed descriptive variable names. 
-7) From the data set in step 6, creates a second, independent tidy data set with the average of each variable for each         activity and each subject.
+5) Appropriately labels the data set with renamed descriptive acivity and variable names. 
+6) From the data set in step 5, creates a second, independent tidy data set with the average of each variable for each         activity and each subject.
 ## E) INSTRUCTIONS FOR FINAL PRODUCT:
 Create the tidy data set called tidy.txt by;
-Upload the tidy data set created in step 7 of the procuessing instructions above as a txt file created with                 write.table() using row.name=FALSE  
+Upload the tidy data set created in step 6 of the procuessing instructions above as a txt file created with                 write.table() using row.name=FALSE  
 
 ====================================
 ## F) SOURCE INFORMATION:
