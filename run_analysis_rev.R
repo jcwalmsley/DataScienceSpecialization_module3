@@ -135,8 +135,7 @@ date()
 #===================================
 # write output to a file called tidyData.txt
 write.table(tidyD, "tidyData.txt", row.names = FALSE, quote = FALSE, sep = "\t")
-
-
+date()
 
 
 
