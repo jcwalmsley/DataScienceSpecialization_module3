@@ -1,0 +1,7 @@
+# History files
+.Rhistory
+
+# R data
+.Rdata
+
+# Ignore data files
