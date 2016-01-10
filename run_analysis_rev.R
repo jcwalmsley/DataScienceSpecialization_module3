@@ -74,17 +74,23 @@ d <- rbind(trainX, testX)
 d
 
 #===================================
+# join the activity names with the activity ids and subjects df
 f <- activities
 f
 g <- join(c, f)
 g
 head(g)
+#===================================
+# set the column names of g
 names(g) <- c("subjectID", "activityID", "activityName")
+#===================================
+# rename g to observ; indicating observation columns
 observ <- g[-2]
 dim(observ)
 head(observ)
 
 #===================================
+# merge the observations with the dataset d to give allData
 allData <- cbind(observ, d)
 head(allData)[1:12]
 dim(allData)
@@ -104,10 +110,12 @@ allData3 <- allData2[, !duplicated(colnames(allData2))]
 dim(allData3)
 
 #===================================
+# set variable / column names to lower case
 names(allData3) <- tolower(names(allData3))
 names(allData3)
 
 #===================================
+# group by subject and activity, then summarize by mean
 library(dplyr)
 G <- group_by(allData3, subjectID, activityName)
 tidyD <- summarise_each(G, funs(mean))
@@ -116,6 +124,7 @@ summary(tidyD)
 date()
 
 #===================================
+# write output to a file called tidyData.txt
 write.table(tidyD, "tidyData.txt", row.names = FALSE, quote = FALSE, sep = "\t")
 
 
