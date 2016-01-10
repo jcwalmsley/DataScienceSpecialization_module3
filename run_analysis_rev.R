@@ -60,16 +60,25 @@ activities <- read.table("./UCI HAR Dataset/activity_labels.txt", header = FALSE
 ls()
 
 # ==================================
+# combine the train set of subject ids with activity ids
 a <- cbind(trainZ, trainY)
 a
+# =================================
+# combine the test set of subject ids with activity ids
 b <- cbind(testZ, testY)
 b
+# =================================
+# cobine the training subject id and activity id rows with
+# the test subject id and activity id rows
 c <- rbind(a,b)
 c
+#====================================
+# rename the columns of the merged rows (a,b)
 names(c) <- c("ID", "V1")
 c[1:5,]
 
 #===================================
+# conbine the train data rows with the test data rows
 d <- rbind(trainX, testX)
 d
 
