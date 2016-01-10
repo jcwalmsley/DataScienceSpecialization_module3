@@ -68,7 +68,7 @@ a
 b <- cbind(testZ, testY)
 b
 # =================================
-# cobine the training subject id and activity id rows with
+# combine the training subject id and activity id rows with
 # the test subject id and activity id rows
 c <- rbind(a,b)
 c
@@ -78,7 +78,7 @@ names(c) <- c("ID", "V1")
 c[1:5,]
 
 #===================================
-# conbine the train data rows with the test data rows
+# combine the train data rows with the test data rows
 d <- rbind(trainX, testX)
 d
 
