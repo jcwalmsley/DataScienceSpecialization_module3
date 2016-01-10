@@ -136,6 +136,7 @@ date()
 # write output to a file called tidyData.txt
 write.table(tidyD, "tidyData.txt", row.names = FALSE, quote = FALSE, sep = "\t")
 date()
+# [1] "Sun Jan 10 14:02:06 2016"
 
 
 
