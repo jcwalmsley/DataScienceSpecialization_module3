@@ -1,0 +1,222 @@
+View(top_counts)
+bye()
+swirl()
+library(swirl)
+swirl()
+submit()
+pack_sum
+quantile(pack_sum$count, probs = .99)
+filter(pack_sum, count > 679)
+top_counts <- filter(pack_sun, count > 679)
+top_counts <- filter(pack_sum, count > 679)
+top_counts
+View(top_counts)
+top_counts_sorted <- arrange(top_counts, 'count')
+top_counts_sorted <- arrange(top_counts, 'count', desc = TRUE)
+?arrange
+top_counts_sorted <- arrange(top_counts, count, desc = TRUE)
+top_counts_sorted <- arrange(top_counts$count, desc = TRUE)
+?arrange
+top_counts_sorted <- arrange(top_counts, desc(count))
+View(top_counts)
+View(top_counts_sorted)
+View(yop_counts_sorted)
+View(top_counts_sorted)
+quantile(pack_sum$unique, probs = .99)
+top_unique <- filter(pack_sum, unique > 465)
+View(top_unique)
+yop_unique_sorted <- arrange(top_unique$unique, desc = TRUE)
+yop_unique_sorted <- arrange(top_unique, unique, desc = TRUE)
+top_unique_sorted <- arrange(top_unique, unique, desc = TRUE)
+top_unique_sorted <- arrange(top_unique$unique, desc = TRUE)
+top_unique_sorted <- arrange(top_unique, 'unique, desc = TRUE)
+.>
+>
+top_unique_sorted <- arrange(top_unique, 'unique' desc = TRUE)
+top_unique_sorted <- arrange(top_unique, "unique" desc = TRUE)
+top_unique_sorted <- arrange(top_unique, "unique", desc = TRUE)
+top_unique_sorted <- arrange(top_unique, unique, desc = TRUE)
+top_unique_sorted <- arrange(top_unique, desc(unique))
+View(top_unique_sorted)
+submit()
+View(result3)
+submit()
+bye()
+swirl()
+bye()
+swirl()
+library(tidyr)
+students
+?gather
+gather(students, sex, count, -grade)
+students2
+res <- gather(students2, sex_class, count)
+res <- gather(students2, sex_class, count, -grade)
+print res
+res
+?separate
+separate(res, col = sex_class, into = c("sex", "class"))
+submit()
+students3
+reset
+reset()
+submit()
+?spread
+submit()
+extract_numeric("class5")
+?mutate
+?extract_numeric
+submit()
+reset()
+reset()submit()
+submit()
+?mutate
+?extract_numeric
+submit()
+reset()
+submit()
+reset()
+submit()
+students4
+submit()
+reset()
+submit()
+?unique
+submit()
+skip()
+submit()
+passed
+failed
+passed <- mutate(status, "NA")
+passed <- mutate(passed, ststus = "NA")
+passed <- passed %>% mutate(status = "passed")
+failed <- failed %<% mutate(status = "NA")
+failed <- failed %>% mutate(status = "NA")
+failed <- failed %>% mutate(status = "failed")
+packageVersion('dplyr')
+bind_rows(passed, failed)
+sat
+submit()
+?separate
+?select
+?gather
+submit()
+?separate
+submit()
+?gather
+submit()
+Sys.getlocale("LC_TIME")
+library(lubridate)
+help(package = lubridate)
+today()
+this_day <- today()
+this_day
+month(this_day)
+wday(this_day)
+wday(this_day, label = TRUE)
+this_moment <- now()
+this_moment
+minute(this_moment)
+my_date <- ymd("1989-05-17")
+my_date
+class(my_date)
+ymd("1989 May 17")
+ymd("March 12, 1975")
+mdy("March 12, 1975")
+dmy(25081985)
+ymd("192012")
+ymd("//192012")
+ymd(//"192012")
+ymd("1920/1/2")
+dt1
+ymd-hms(dt1)
+ymd_hms(dt1)
+hms("03:22:14")
+dt2
+ymd(dt2)
+update(this_moment, hours = 8, minutes = 34, seconds = 55)
+this_moment
+update(this_moment, hours = 22, minutes = 34)
+this_moment <- update(this_moment, hours = 10, minutes = 35, seconds = 25)
+this_moment
+nyc <- now("America/New_York")
+nyc
+nyc + days(2)
+depart <- nyc + days(2)
+depart
+update(depart, hours = 17, minutes = 34)
+depart <- update(depart, hours = 17, minutes = 34)
+depart
+arrive <- depart + (hours(15), minutes(50))
+arrive <- depart + (hours(15) minutes(50))
+arrive <- depart + hours(15) minutes(50)
+arrive <- depart + hours(15) + minutes(50)
+?with_tz
+arrive <- with_tz(arrive, "Asia/Hong_Kong")
+arrive
+df2
+# Getting and Cleaning Data Course Project R code:#
+# Clean workspace:#
+#rm(list=ls())#
+ls()#
+#
+# setwd:#
+setwd("~/Desktop/Coursera_R/GetCleanDataCourseProject")#
+ls()#
+#
+# Install R packages:#
+packages <- c('base', 'curl', 'plyr', 'dplyr', 'data.table', 'httr', 'magrittr', 'reshape2', 'utils')#
+sapply(packages, require, character.only = TRUE, quietly = TRUE)#
+#
+# Assign handle to source URL, download the data to directory called "data"#
+if (!file.exists("phoneData")) {#
+	fileUrl<- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"#
+	zipfile="phoneData.zip"#
+	download.file(fileUrl, destfile = zipfile, method = "curl")#
+	dateDownloaded <- date()#
+	dateDownloadedls#
+	ls()#
+	unzip("phoneData.zip", exdir = ".")#
+	list.files("UCI HAR Dataset")#
+ }#
+#
+# filespath <- "C:/Users/jamescwalmsley/Desktop/Coursera_R/GetCleanDataCourseProject/UCIHAR"#
+#
+# READ#
+subtest <- read.table("./UCIHAR/test/subject_test.txt")#
+xtest <- read.table("./UCIHAR/test/X_test.txt")#
+ytest <- read.table("./UCIHAR/test/y_test.txt")#
+subtrain <- read.table("./UCIHAR/train/subject_train.txt")#
+xtrain <- read.table("./UCIHAR/train/X_train.txt")#
+ytrain <- read.table("./UCIHAR/train/y_train.txt")#
+features <- read.table("./UCIHAR/features.txt")[,2]#
+activities <- read.table("./UCIHAR/activity_labels.txt")[,2]#
+# MERGE#
+xmerg <- rbind(xtrain, xtest)#
+ymerg <- rbind(ytrain, ytest)#
+submerg <- rbind(subtrain, subtest)#
+fullmerg <- cbind(submerg, ymerg, xmerg)#
+#
+# RENAME COLUMNS#
+features <- as.character(features[,2])#
+newCols <- c("subject", "activity", features)#
+colnames(fullmerg) <- newCols#
+#
+# EXTRACT MEAN & STD#
+meanCols <- grep("mean()", colnames(fullmerg))#
+stdCols <- grep("std()", colnames(fullmerg))#
+finCols <- c(meanCols, stdCols)#
+finCols <- sort(finCols)#
+finCols#
+df1 <- fullmerg[, c(1, 2, finCols)]#
+df1#
+df2 <- df1 %>% select(-contains("meanFreq")) #
+dim(df2) # 10299r, 68c#
+dim(fullmerg) # 10299r, 563c#
+#
+# REFINE RESULTS
+tidy.txt <- data.frame
+write.table(, "tidy.txt", row.names = FALSE, quote = FALSE)
+write.table(tidy.txt, "df2", row.names = FALSE, quote = FALSE)
+tidy.txt <- df2
+write.table(tidy.txt, "df2", row.names = FALSE, quote = FALSE)
