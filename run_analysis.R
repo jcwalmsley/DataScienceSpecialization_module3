@@ -107,6 +107,44 @@ str(allData)
 allData <- (allData)[-2]
 head(allData)
 
+#===================================
+# make lowercase the column names of the observatoin values
+varNames <- tolower(features[,2])
+varNames
+allColumnNames <- c("subjectID", "activityName", varNames)
+head(allColumnNames)
+length(allColumnNames)
+#===================================
+# set the column names for the subjects, activities and observation values
+names(allData) <- allColumnNames
+head(allData)[1:8]
+#===================================
+# select (subjectID, activityName, and only remaining colums containing (mean or std) and check for duplicates in the new subset
+index <- grepl("(ID$)|(Name$)|(mean\\(\\))|(std\\(\\))", allColumnNames)
+index <- order(index)
+indexRemove <- index==FALSE
+newData <- allData[!indexRemove]
+dim(newData)
+head(newData)[1:15]
+#===================================
+# remove duplicate columns if any exist
+allData <- newData[, !duplicated(colnames(newData))]
+head(allData)
+#===================================
+# group by subject and activity, then summarize by mean
+library(dplyr)
+groupedData <- group_by(newData, subjectID, activityName)
+tidyData <- summarise_each(groupedData, funs(mean))
+dim(tidyData)
+summary(tidyData)
+tidyData
+#===================================
+# write output to a file called tidyData.txt
+write.table(tidyData, "tidyData.txt", row.names = FALSE, quote = FALSE, sep = "\t")
+date()
+# [1] "Tue Jan 12 22:01:58 2016"
+
+
 
 
 
