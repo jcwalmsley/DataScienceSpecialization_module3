@@ -100,12 +100,11 @@ pA
 # are of with the coressponding columns of vlaues
 allData <- cbind(pA, observ)
 head(allData)[1:12]
-str(allData)
 
 #===================================
-# from (f) remove column 2 and assign (f) to "pA" = subjectActivites
-allData <- (allData)[-2]
-head(allData)
+# from (allData) remove column 2 and assign "dataT1" = subjectActivites
+dataT1 <- (allData)[-2]
+head(dataT1)[1:30]
 
 #===================================
 # make lowercase the column names of the observatoin values
@@ -116,24 +115,27 @@ head(allColumnNames)
 length(allColumnNames)
 #===================================
 # set the column names for the subjects, activities and observation values
-names(allData) <- allColumnNames
-head(allData)[1:8]
+names(dataT1) <- allColumnNames
+head(dataT1)[1:8]
+tail(dataT1)
+
 #===================================
 # select (subjectID, activityName, and only remaining colums containing (mean or std) and check for duplicates in the new subset
 index <- grepl("(ID$)|(Name$)|(mean\\(\\))|(std\\(\\))", allColumnNames)
-index <- order(index)
-indexRemove <- index==FALSE
-newData <- allData[!indexRemove]
-dim(newData)
-head(newData)[1:15]
+index
+dataT2 <- dataT1[,index==TRUE]
+dim(dataT2)
+head(dataT2)[1:15]
 #===================================
 # remove duplicate columns if any exist
-allData <- newData[, !duplicated(colnames(newData))]
-head(allData)
+finalData <- dataT2[, !duplicated(colnames(dataT2))]
+head(finalData)
+dim(finalData)
+
 #===================================
 # group by subject and activity, then summarize by mean
 library(dplyr)
-groupedData <- group_by(newData, subjectID, activityName)
+groupedData <- group_by(finalData, subjectID, activityName)
 tidyData <- summarise_each(groupedData, funs(mean))
 dim(tidyData)
 summary(tidyData)
@@ -142,12 +144,13 @@ tidyData
 # write output to a file called tidyData.txt
 write.table(tidyData, "tidyData.txt", row.names = FALSE, quote = FALSE, sep = "\t")
 date()
-# [1] "Tue Jan 12 22:01:58 2016"
+# [1] "Tue Jan 12 23:17:43 2016"
 <<<<<<< Updated upstream
 
 
 =======
 >>>>>>> Stashed changes
+
 
 
 
