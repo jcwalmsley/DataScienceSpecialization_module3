@@ -60,77 +60,89 @@ activities <- read.table("./UCI HAR Dataset/activity_labels.txt", header = FALSE
 ls()
 
 # ==================================
-# combine the train set of subject ids with activity ids
-a <- cbind(trainZ, trainY)
-a
+# combine by columns; the -train sets- of (subjects or Z) with (activities or Y)
+subAct1 <- cbind(trainZ, trainY)
+subAct1
 # =================================
-# combine the test set of subject ids with activity ids
-b <- cbind(testZ, testY)
-b
+# combine by columns; the -test sets- of (subject or Z) with (activity or Y)
+subAct2 <- cbind(testZ, testY)
+subAct2
 # =================================
-# combine the training subject id and activity id rows with
-# the test subject id and activity id rows
-c <- rbind(a,b)
-c
+# combine by rows; (subAct1 & subAct2) and asign to "subAct"
+subAct <- rbind(subAct1, subAct2)
+subAct
+
 #====================================
-# rename the columns of the merged rows (a,b)
-names(c) <- c("ID", "V1")
-c[1:5,]
+# rename the columns of "subAct"
+colnames(subAct) <- c("ID", "V1")
+head(subAct)
 
 #===================================
-# combine the train data rows with the test data rows
-d <- rbind(trainX, testX)
-d
-
-#===================================
-# join the activity names with the activity ids and subjects df
-f <- activities
-f
-g <- join(c, f)
-g
-head(g)
-#===================================
-# set the column names of g
-names(g) <- c("subjectID", "activityID", "activityName")
-#===================================
-# rename g to observ; indicating observation columns
-observ <- g[-2]
-dim(observ)
+# combine by rows; the "X" train and test values and assign to "observ" = observations
+observ <- rbind(trainX, testX)
 head(observ)
 
 #===================================
-# merge the observations with the dataset d to give allData
-allData <- cbind(observ, d)
-head(allData)[1:12]
-dim(allData)
+# join "subAct" with activites by variable "V1" and assign to "pA" = population & activities
+pA <- join(subAct, activities)
+head(pA)
+
 
 #===================================
-# select only columns (subjectID, activityName, mean, std) & remove any duplicates
-allDataVarNames <- names(allData)
-length(allDataVarNames)
-varNamesIndex <- grepl("(ID$)|(Name$)|(mean\\(\\))|(std\\(\\))", allDataVarNames)
-varNamesIndex
-allData2 <- allData[!varNamesIndex==FALSE]
-dim(allData2)
+# rename columns of (pA):
+names(pA) <- c("subjectID", "activityID", "activityName")
+head(pA)
+pA$activityName <- tolower(pA$activityName)
+pA
+
+#===================================
+# merge "subAct" with "observ" = the descriptions of what the observations
+# are of with the coressponding columns of vlaues
+allData <- cbind(pA, observ)
+head(allData)[1:12]
+str(allData)
+
+#===================================
+# from (f) remove column 2 and assign (f) to "pA" = subjectActivites
+allData <- (allData)[-2]
+head(allData)
+
+#===================================
+# make lowercase the column names of the observatoin values
+varNames <- tolower(features[,2])
+varNames
+allColumnNames <- c("subjectID", "activityName", varNames)
+head(allColumnNames)
+length(allColumnNames)
+
+
+#===================================
+# set the column names for the subjects, activities and observation values
+names(allData) <- allColumnNames
+head(allData)[1:8]
+
+#===================================
+# select (subjectID, activityName, and only remaining colums containing (mean or std) and check for duplicates in the new subset
+index <- grepl("(ID$)|(Name$)|(mean\\(\\))|(std\\(\\))", allColumnNames)
+index <- order(index)
+indexRemove <- index==FALSE
+newData <- allData[!indexRemove]
+dim(newData)
+head(newData)[1:15]
 
 #===================================
 # remove duplicate columns if any exist
-allData3 <- allData2[, !duplicated(colnames(allData2))]
-dim(allData3)
-
-#===================================
-# set variable / column names to lower case
-names(allData3) <- tolower(names(allData3))
-names(allData3)
+allData <- newData[, !duplicated(colnames(newData))]
+head(allData)
 
 #===================================
 # group by subject and activity, then summarize by mean
 library(dplyr)
-G <- group_by(allData3, subjectID, activityName)
-tidyD <- summarise_each(G, funs(mean))
-tidyD
-summary(tidyD)
-date()
+groupedData <- group_by(newData, subjectID, activityName)
+tidyData <- summarise_each(groupedData, funs(mean))
+dim(tidyData)
+summary(tidyData)
+tidyData
 
 #===================================
 # write output to a file called tidyData.txt
