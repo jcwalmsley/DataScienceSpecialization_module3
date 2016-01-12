@@ -148,7 +148,7 @@ tidyData
 # write output to a file called tidyData.txt
 write.table(tidyData, "tidyData.txt", row.names = FALSE, quote = FALSE, sep = "\t")
 date()
-# [1] "Tue Jan 12 22:01:58 2016" 
+# [1] "Tue Jan 12 22:01:58 2016"
 
 
 
