@@ -124,7 +124,7 @@ varNames
 
 # ==================================
 # concatenate the column names vector of "pA" and "observ"
-# for the new data set "allData" and assign to "allColumnNames"
+# for the new data set "dataT1" and assign to "allColumnNames"
 allColumnNames <- c("subjectID", "activityName", varNames)
 head(allColumnNames)
 length(allColumnNames)
