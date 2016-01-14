@@ -67,35 +67,35 @@ ls()
 # with (activities or Y)
 subAct1 <- cbind(trainZ, trainY)
 subAct1
-# =================================
+# ==================================
 # combine by columns; the -test sets- of (subject or Z)
 # with (activity or Y)
 subAct2 <- cbind(testZ, testY)
 subAct2
-# =================================
+# ==================================
 # combine by rows; (subAct1 & subAct2) and asign to "subAct"
 subAct <- rbind(subAct1, subAct2)
 subAct
 
-#====================================
+# ==================================
 # rename the columns of "subAct"
 colnames(subAct) <- c("ID", "V1")
 head(subAct)
 
-#===================================
+# ==================================
 # combine by rows; train and test datasets of "X" and assign
 # to "observ" = observations
 observ <- rbind(trainX, testX)
 head(observ)
 
-#===================================
+# ==================================
 # join "subAct" with the activity descriptions = "activities"
 # by variable "V1" and assign to "pA" = population & activities
 pA <- join(subAct, activities)
 head(pA)
 
 
-#===================================
+# ==================================
 # rename columns of (pA):
 names(pA) <- c("subjectID", "activityID", "activityName")
 head(pA)
@@ -105,38 +105,38 @@ head(pA)
 pA$activityName <- tolower(pA$activityName)
 pA
 
-#===================================
+# ==================================
 # merge "subAct" with "observ" by column bind resulting
 # in full raw data set and assign to "allData"
 allData <- cbind(pA, observ)
 head(allData)[1:12]
 
-#===================================
+# ==================================
 # remove column 2 "activityID" from (allData) assign results to
 # "dataT1" = (subject, activites and values)
 dataT1 <- (allData)[-2]
 head(dataT1)[1:30]
 
-#===================================
+# ==================================
 # set "features" = the observation values column names to lowercase
 varNames <- tolower(features[,2])
 varNames
 
-#===================================
+# ==================================
 # concatenate the column names vector of "pA" and "observ"
 # for the new data set "allData" and assign to "allColumnNames"
 allColumnNames <- c("subjectID", "activityName", varNames)
 head(allColumnNames)
 length(allColumnNames)
 
-#===================================
+# ==================================
 # set the column names for "dataT1" = subjects, activities and
 # observation values
 names(dataT1) <- allColumnNames
 head(dataT1)[1:8]
 tail(dataT1)
 
-#===================================
+# ==================================
 # select from "dataT1" (subjectID, activityName, plus only
 # columns containing (mean or std) and assign results to "dataT2"
 index <- grepl("(ID$)|(Name$)|(mean\\(\\))|(std\\(\\))", allColumnNames)
@@ -145,14 +145,14 @@ dataT2 <- dataT1[,index==TRUE]
 dim(dataT2)
 head(dataT2)[1:15]
 
-#===================================
+# ==================================
 # if any exist, remove duplicate columns and assign
 # results to "finalData"
 finalData <- dataT2[, !duplicated(colnames(dataT2))]
 head(finalData)
 dim(finalData)
 
-#===================================
+# ==================================
 # group "finalData" by subject and activity assign the
 # results to "groupedData" then summarize by mean and
 # assign new results to "tidyData"
@@ -162,7 +162,8 @@ tidyData <- summarise_each(groupedData, funs(mean))
 dim(tidyData)
 summary(tidyData)
 tidyData
-#===================================
+
+# ==================================
 # take "tidyData" and write it as output to a file
 # called "tidyData.txt"
 write.table(tidyData, "tidyData.txt", row.names = FALSE, quote = FALSE, sep = "\t")
