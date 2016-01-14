@@ -2,15 +2,15 @@
 # Course Project, jw, dtd 60101
 
 # Start by cleaning up the workspace
-#===================================
+# ==================================
 rm(list=ls())
 ls()
 
-#===================================
+# ==================================
 # Next set the working directory
 # setwd("~./Desktop/Coursera_R/GetCleanDataCourseProject")
 
-#===================================
+# ==================================
 # Load the following R packaqes
 library(base)
 library(curl)
@@ -25,7 +25,7 @@ library(stringi)
 library(stringr)
 library(utils)
 
-#====================================
+# ===================================
 # Next give a handle to Url of the data source then download
 # and open the assignment zip file from the local working directory
  if (!file.exists("UCI HAR Dataset")) {
@@ -33,12 +33,12 @@ library(utils)
 	zipfile="UCI HAR Dataset.zip"
 	download.file(fileUrl, destfile=zipfile, method = "curl")
 
-#====================================
+# ===================================
 # Get time stamp on dowload
 	dateDownLoaded <- date()
 	dateDownLoaded
 
-#=====================================
+# ====================================
 # Next unzip the UCI HAR Dataset data files form the local
 # working directory
 	unzip("UCI HAR Dataset.zip", exdir = ".")
