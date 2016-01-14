@@ -130,8 +130,8 @@ head(allColumnNames)
 length(allColumnNames)
 
 # ==================================
-# set the column names for "dataT1" = subjects, activities and
-# observation values
+# set the column names for "dataT1" = (subjects, activities and
+# observation) values
 names(dataT1) <- allColumnNames
 head(dataT1)[1:8]
 tail(dataT1)
