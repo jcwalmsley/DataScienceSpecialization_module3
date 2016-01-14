@@ -1,4 +1,5 @@
-# Revised run_anlaysis.R code for Getting and Cleaning Data Course Project, jw, dtd 60101
+# Revised run_anlaysis.R code for Getting and Cleaning Data
+# Course Project, jw, dtd 60101
 
 # Start by cleaning up the workspace
 #===================================
@@ -25,7 +26,8 @@ library(stringr)
 library(utils)
 
 #====================================
-# Next give a handle to Url of the data source then download and open the assignment zip file from the local working directory
+# Next give a handle to Url of the data source then download
+# and open the assignment zip file from the local working directory
  if (!file.exists("UCI HAR Dataset")) {
 	fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 	zipfile="UCI HAR Dataset.zip"
@@ -37,7 +39,8 @@ library(utils)
 	dateDownLoaded
 
 #=====================================
-# Next unzip the UCI HAR Dataset data files form the local working directory
+# Next unzip the UCI HAR Dataset data files form the local
+# working directory
 	unzip("UCI HAR Dataset.zip", exdir = ".")
 	list.files("UCI HAR Dataset")
 }
@@ -134,8 +137,8 @@ head(dataT1)[1:8]
 tail(dataT1)
 
 #===================================
-# select from "dataT1" (subjectID, activityName, plus only colums containing
-# (mean or std) and assign results to "dataT2"
+# select from "dataT1" (subjectID, activityName, plus only
+# columns containing (mean or std) and assign results to "dataT2"
 index <- grepl("(ID$)|(Name$)|(mean\\(\\))|(std\\(\\))", allColumnNames)
 index
 dataT2 <- dataT1[,index==TRUE]
@@ -160,7 +163,8 @@ dim(tidyData)
 summary(tidyData)
 tidyData
 #===================================
-# take "tidyData" and write it as output to a file called "tidyData.txt"
+# take "tidyData" and write it as output to a file
+# called "tidyData.txt"
 write.table(tidyData, "tidyData.txt", row.names = FALSE, quote = FALSE, sep = "\t")
 date()
 # [1] "Tue Jan 12 23:17:43 2016"
